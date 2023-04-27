@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+	function removeSpace( str)
+	{
+    
+		str = str.replace(/ /g,'-').replace(/_/g,'-').replace(/([a-z](?=[A-Z]))/g, '$1 ').replace(/\s+/g, '-').toLowerCase();
+    
+		return str;
+    
+	}
+  
+	var str = "helloWorld-How_are you? I am veryGood";
+ 
+	document.write(removeSpace(str));
+
+</script>
+
+</body>
+</html>
+
+
