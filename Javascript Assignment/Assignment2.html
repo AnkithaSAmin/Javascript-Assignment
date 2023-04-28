@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+	function removeSpace( str)
+	{
+    str = str.replace(/ /g,'-').replace(/_/g,'-').replace(/([a-z](?=[A-Z]))/g, '$1 ').replace(/\s+/g, '-').toLowerCase();
+    //return str;
+    document.write("The string is:" +str+ "\n");
+	}
+  
+  
+  const str = prompt("Enter a String: ");
+  const result=removeSpace(str);
+  console.log(result)
+  //document.write(removeSpace(str));
+
+</script>
+
+</body>
+</html>
+
+
