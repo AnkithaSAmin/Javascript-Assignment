@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Assignment3</title>
+  </head>
+  <body>
+
+<script>
+
+//  Javascript code for Count values of array items
+
+function countvalue(Arr, n)
+{
+	let visited = Array.from({length: n}, (_, i) => false);
+		
+	// Traverse through array elements 
+	
+	for (let i = 0; i < n; i++) {
+
+		
+		if (visited[i] == true)
+			continue;
+
+		// Count values
+		let count = 1;
+		for (let j = i + 1; j < n; j++) {
+			if (Arr[i] == Arr[j]) {
+				visited[j] = true;
+				count++;
+			}
+		}
+		document.write(Arr[i] + " : " + count +  "<br>");
+    
+	}
+  
+}
+
+// Taking Array of strings as a Inputs
+
+	let Arr = ['abc','def','cde','abc','def','elc'];
+	let n = Arr.length;
+	countvalue(Arr, n);
+
+</script>
+</body>
+
+
+</html>
+
+
