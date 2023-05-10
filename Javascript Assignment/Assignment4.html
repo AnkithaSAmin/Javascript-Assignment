@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+//Shuffling array elements randomly
+
+    var permArr = [],
+  usedChars = [];
+
+
+   const shuffle = a => {
+  return a.reduce((l, e, i) => {
+    const j = Math.floor(Math.random()*(a.length-i)+i); 
+    [ a[i], a[j] ] = [ a[j], a[i] ];
+    return a;
+  }, a)
+};
+
+//Keeping even elemnts fixed and shuffling odd elements
+const fixedShuffleIndex = (a, f, input) => {
+  w = shuffle(
+    a.reduce(
+      (acc, e, i) => {
+        if (!f[i]) {
+          
+          acc.push(e);
+        }
+        return acc;
+      },
+      []
+    )
+  );
+  
+  return f.reduce(
+    (acc, e, i) => {
+      if (e) {
+        
+        acc.splice(i, 0, a[i]);
+      }
+      return acc;
+    },
+    w
+  );
+
+  
+  }
+  
+  
+
+
+
+
+  setInterval(() => {
+  document.getElementById('hello').innerHTML = JSON.stringify(fixedShuffleIndex([1, 2, 3, 4, 5, 6],[true, false, true, false, true, false]))
+}, 1000);// Displaying in array format
+
+
+
+</script>
+</head>
+<body> 
+  <div id="hello"></div>
+</body>
+</html>
